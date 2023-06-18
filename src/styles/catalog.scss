@@ -1,0 +1,40 @@
+.catalog {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 30px;
+  }
+  &__card {
+    width: calc(33.33333% - 10px);
+    text-align: center;
+    &-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+   &-title {
+     font-weight: 300;
+     font-size: 16px;
+     color: #252525;
+     margin: 5px 0;
+   }
+    &-price {
+      font-weight: 700;
+      font-size: 16px;
+      color: #252525;
+    }
+    &-sizes, &-colors {
+      display: flex;
+      justify-content: center;
+      column-gap: 5px;
+      margin-bottom: 5px;
+    }
+    &-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+  }
+}

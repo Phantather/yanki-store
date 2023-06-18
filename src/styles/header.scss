@@ -1,0 +1,26 @@
+.header {
+  padding: 25px 0;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__links {
+    display: flex;
+    column-gap: 28px;
+  }
+  &__link {
+    font-weight: 300;
+    font-size: 18px;
+    color: #252525;
+  }
+  &__icons {
+    display: flex;
+    align-items: center;
+    column-gap: 33px;
+    a {
+      font-size: 22px;
+      color: #E0BEA2;
+    }
+  }
+}
