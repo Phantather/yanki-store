@@ -1,0 +1,36 @@
+.header {
+  padding: 25px 0;
+  position: absolute;
+  width: 100%;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &::before {
+      content: url("../assets/logo.svg");
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      }
+    }
+  &__links {
+    display: flex;
+    column-gap: 28px;
+  }
+  &__link {
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+  }
+  &__icons {
+    display: flex;
+    align-items: center;
+    column-gap: 33px;
+    a {
+      font-size: 22px;
+      color: #E0BEA2;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.homeimg {
+  position: relative;
+}
+
+.home {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 100px;
+  background: url("../assets/hometop.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 900px;
+  &__cards {
+    display: flex;
+  }
+  &__card {
+    display: inline-block;
+    &-img {
+      width: 100%;
+    }
+  }
+  &__bottom {
+    &-title {
+      font-family: 'Raleway',sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      color: #252525;
+      margin-bottom: 50px;
+    }
+
+  }
+  &__line {
+    height: 20px;
+    width: 120px;
+    border-bottom: 1px solid white;
+  }
+  &__top {
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 46px;
+      text-align: center;
+      color: #FFFFFF;
+      opacity: 0.85;
+    }
+    &-desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      padding-top: 20px;
+    }
+  }
+}
