@@ -1,0 +1,21 @@
+.aside{
+  width: 20%;
+
+  &__menu{
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    margin-top: 60px;
+    &-item{
+      cursor: pointer;
+      font-family: 'Raleway',sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      color: #252525;
+      &:hover{
+        background: #25252550;
+      }
+    }
+  }
+}
