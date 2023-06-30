@@ -1,46 +1,95 @@
 .catalog {
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 15px;
-    width: 80%;
-    row-gap: 30px;
+  &__count {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 19px;
+    color: #252525;
   }
-  &__between{
-    display: flex;
-    column-gap: 10px;
+  &__fav {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 19px;
+    color: #252525;
+    text-align: center;
+    margin: 10em 0;
   }
-  &__filter{
+  &__filter {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     column-gap: 34px;
     width: 100%;
-    &-item{
+    &-item {
       display: flex;
       column-gap: 15px;
       align-items: center;
+      cursor: pointer;
+      color: #252525;
+      font-size: 16px;
+      font-family: Raleway, sans-serif;
+      font-weight: 300;
+      &-sel {
+        border: 1px solid white;
+        color: #252525;
+        font-size: 16px;
+        font-family: Raleway, sans-serif;
+        font-weight: 300;
+        appearance: none;
+        &:hover {
+          text-shadow: 1px 1px 2px #252525;
+        }
+      }
+      &:hover {
+        text-shadow: 1px 1px 2px #252525;
+      }
 
     }
   }
+  &__between {
+    padding-top: 200px;
+    display: flex;
+    column-gap: 10px;
+  }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 30px;
+    width: 80%;
+  }
   &__card {
-
     width: calc(33.33333% - 10px);
     text-align: center;
+    &-btn {
+      border: none;
+      color: Black;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    &-del {
+      display: flex;
+      justify-content: center;
+    }
     &-img {
       width: 100%;
-      max-height: 400px;
+      max-height: 370px;
       object-fit: cover;
     }
-   &-title {
-     font-weight: 300;
-     font-size: 16px;
-     color: #252525;
-     margin: 5px 0;
-   }
+    &-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #252525;
+    }
     &-price {
+      font-family: 'Raleway', sans-serif;
       font-weight: 700;
       font-size: 16px;
+      line-height: 19px;
       color: #252525;
     }
     &-sizes, &-colors {
@@ -49,6 +98,14 @@
       column-gap: 5px;
       margin-bottom: 5px;
     }
+    &-size {
+      font-family: 'Raleway',sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: rgba(37, 37, 37, 0.5);
+    }
     &-color {
       width: 14px;
       height: 14px;
@@ -56,4 +113,5 @@
       border: 1px solid black;
     }
   }
+
 }

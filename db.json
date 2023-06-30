@@ -6314,5 +6314,14 @@
       "brand": "Nike",
       "gender": "woman"
     }
+  ],
+  "users": [
+    {
+      "email": "akdil.phanti@gmail.com",
+      "password": "$2a$10$5YVVm8o.eLik7RM.sxWgle6mwfNywbbl3fWaBfjgP.gxazMuKSJji",
+      "login": "Phantather",
+      "orders": [],
+      "id": 1
+    }
   ]
 }
