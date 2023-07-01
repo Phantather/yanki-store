@@ -7,6 +7,7 @@ import OneProduct from "./pages/OneProduct/OneProduct";
 import Cart from "./pages/Cart/Cart";
 import Favorites from "./pages/Favorites/Favorites";
 import Register from "./pages/Register/Register";
+import Login from "./pages/Register/Login";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path={'/favorites'} element={<Favorites/>}/>
             </Route>
             <Route path={'/register'} element={<Register/>}/>
+            <Route path={'/login'} element={<Login/>}/>
         </Routes>
     </div>
   );

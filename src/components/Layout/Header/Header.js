@@ -1,15 +1,23 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 
-//media
+
 import {AiOutlineUser, AiOutlineHeart, AiOutlineShoppingCart} from 'react-icons/ai'
+import {IoIosLogOut} from 'react-icons/io'
+
 import logo from '../../../assets/logo.svg'
 import {CustomContext} from "../../../utils/Context";
 
 const Header = () => {
 
     const {cart, favorites} = useContext(CustomContext)
+    let logout = localStorage.getItem("user")
+    const {user, setUser} = useContext(CustomContext)
 
+    const Logout = () => {
+        localStorage.removeItem("user")
+        setUser({})
+    }
     return (
         <header className='header'>
             <div className="container">
@@ -23,9 +31,12 @@ const Header = () => {
                         <img src={logo} alt=""/>
                     </h1>
                     <div className="header__icons">
-                        <Link to={'/register'}>
-                            <AiOutlineUser/>
-                        </Link>
+                        {
+                            logout ? <IoIosLogOut onClick={Logout}/> : <Link to={'/register'}>
+                                <AiOutlineUser/>
+                            </Link>
+                        }
+
                         <Link to={'/favorites'}>
                             <AiOutlineHeart/>
                             {

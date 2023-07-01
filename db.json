@@ -6322,6 +6322,20 @@
       "login": "Phantather",
       "orders": [],
       "id": 1
+    },
+    {
+      "email": "magezamuslim40@gmail.com",
+      "password": "$2a$10$Aj3zt9MZFvcj9wT4/g954e3K9cBIjk9AG2Gh9AiYA0523q5aOMDZa",
+      "login": "Muslim0270705",
+      "orders": [],
+      "id": 2
+    },
+    {
+      "email": "magezamuslim26@gmail.com",
+      "password": "$2a$10$B08Mg7oGvxSJXNGRClF7FuUu1eMixfm7Odr2O7Z8q9D2x019g1ACm",
+      "login": "ripplemobile29@",
+      "orders": [],
+      "id": 3
     }
   ]
 }

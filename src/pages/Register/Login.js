@@ -1,12 +1,11 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import { useForm } from 'react-hook-form';
+import {useContext} from "react";
 import {CustomContext} from "../../utils/Context";
+import {useForm} from "react-hook-form";
 import axios from "axios";
 
-const Register = () => {
-
-
+const Login = () => {
     const {user, setUser} = useContext(CustomContext)
     const navigate = useNavigate()
 
@@ -19,14 +18,13 @@ const Register = () => {
     } = useForm();
 
     const registerUser = (data) => {
-        axios.post("http://localhost:8080/register", {...data, orders: []})
+        axios.post("http://localhost:8080/login", {...data, orders: []})
             .then((res) => {
                 localStorage.setItem('user', JSON.stringify(res.data.user))
                 setUser(res.data.user)
                 navigate('/')
             })
     }
-
     return (
         <section className="register">
             <div className="container">
@@ -34,7 +32,7 @@ const Register = () => {
                       onSubmit={handleSubmit(registerUser)}
                 >
                     <h2 className="register__title">
-                        Вход
+                        Регистрация
                     </h2>
                     <label className="register__form-label">
                         <input
@@ -46,14 +44,6 @@ const Register = () => {
                     </label>
                     <label className="register__form-label">
                         <input
-                            {...register('login')}
-                            type="text"
-                            className="register__form-field"
-                            placeholder="Ваш логин"
-                        />
-                    </label>
-                    <label className="register__form-label">
-                        <input
                             {...register('password')}
                             type="password"
                             className="register__form-field"
@@ -61,14 +51,11 @@ const Register = () => {
                         />
                     </label>
                     <button className="register__form-btn" type="submit">
-                        Продолжить
+                        Войти
                     </button>
                     <div>
-                        <Link to={'/'} className="register__form-link">
-                            Вернуться на главную страницу
-                        </Link>
-                        <Link className="register__form-link" to={"/login"}>
-                            Вход
+                        <Link className="register__form-link" to={"/register"}>
+                            Создать аккаунт
                         </Link>
                     </div>
 
@@ -79,4 +66,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;
