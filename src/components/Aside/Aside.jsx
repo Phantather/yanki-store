@@ -17,6 +17,7 @@ const Aside = () => {
                 Католог
             </p>
             <ul className="aside__menu">
+                <li className="aside__menu-item" onClick={() => setCategory('all')}>all</li>
                 {
                     Array.from(new Set(categories)).map((item,idx) => (
                         <li onClick={() => setCategory(item)} key={idx} className="aside__menu-item">{item}</li>

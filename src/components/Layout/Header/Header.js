@@ -14,7 +14,7 @@ const Header = () => {
     let logout = localStorage.getItem("user")
     const {user, setUser} = useContext(CustomContext)
 
-    const Logout = () => {
+    const logOut = () => {
         localStorage.removeItem("user")
         setUser({})
     }
@@ -32,7 +32,7 @@ const Header = () => {
                     </h1>
                     <div className="header__icons">
                         {
-                            logout ? <IoIosLogOut onClick={Logout}/> : <Link to={'/register'}>
+                            logout ? <IoIosLogOut onClick={logOut}/> : <Link to={'/register'}>
                                 <AiOutlineUser/>
                             </Link>
                         }

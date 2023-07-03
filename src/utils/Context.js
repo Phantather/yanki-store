@@ -12,7 +12,7 @@ export const CustomContext = createContext()
 export const Context = (props) => {
 
     const [clothes, setClothes] = useState([])
-    const [category,setCategory] = useState("")
+    const [category,setCategory] = useState("all")
     const [sort,setSort] = useState("")
     const [gender, setGender] = useState("all")
     const [product, setProduct] = useState({})

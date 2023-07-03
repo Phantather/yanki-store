@@ -4,19 +4,33 @@ import Card from "../../components/Card/Card";
 import Aside from "../../components/Aside/Aside";
 import {CustomContext} from "../../utils/Context";
 
+import {Pagination} from "antd";
+import {logDOM} from "@testing-library/react";
+
 const Catalog = () => {
     const {getAllClothes,setClothes,clothes,category,sort,setSort, gender, setGender} = useContext(CustomContext)
 
+
+    const [page, setPage] = useState(1)
+
+    const showCount = clothes
+        .filter(item => category === "all" ? item : item.category === category)
+        .filter(item => gender === "all" ? item : item.gender === gender)
+        .filter((item, idx) => idx + 1 <= page * 9 && idx >= page * 9 - 9).length
+
+    const showCountLength = clothes
+        .filter(item => category === "all" ? item : item.category === category)
+        .filter(item => gender === "all" ? item : item.gender === gender).length
+
     useEffect(() => {
         getAllClothes()
-    },[])
+        console.log(page)
+    },[page])
 
 
-    console.log(gender)
     return (
         <section className="catalog">
             <div className="container">
-
                 <div className="catalog__between">
                     <Aside/>
                     <div className="catalog__row">
@@ -40,16 +54,9 @@ const Catalog = () => {
                         {
                             category ?
                                 clothes
-                                    .filter(item => item.category === category)
-                                    .filter(item => {
-                                        if (gender === "all") {
-                                            return item
-                                        } else if(gender === 'men') {
-                                            return item.gender === 'men'
-                                        } else if(gender === 'woman') {
-                                            return item.gender === 'woman'
-                                        }
-                                    })
+                                    .filter(item => category === "all" ? item : item.category === category)
+                                    .filter(item => gender === "all" ? item : item.gender === gender)
+                                    .filter((item, idx) => idx + 1 <= page * 9 && idx >= page * 9 - 9)
                                     .sort((a,b) => {
                                         if(sort === "top"){
                                             return a.price - b.price
@@ -58,26 +65,37 @@ const Catalog = () => {
                                         }
                                     }).map((item,idx) => (
                                         <Card key={item.id || idx} item={item}/>
-                                )) :
+                                ))
+                                :
                                 clothes
-                                    .filter(item => {
-                                    if (gender === "all") {
-                                        return item
-                                    } else if(gender === 'men') {
-                                        return item.gender === 'men'
-                                    } else if(gender === 'woman') {
-                                        return item.gender === 'woman'
-                                    }
-                                }).sort((a,b) => {
-                                    if(sort === "bottom"){
-                                        return b.price - a.price
-                                    }else if(sort === "top"){
-                                        return a.price - b.price
-                                    }
-                            }).map((item,idx) => (
-                                <Card key={item.id || idx} item={item}/>
-                            ))
+                                    .filter(item => gender === "all" ? item : item.gender === gender)
+                                    .sort((a,b) => {
+                                        if(sort === "bottom"){
+                                            return b.price - a.price
+                                        }else if(sort === "top"){
+                                            return a.price - b.price
+                                        }
+                                    })
+                                    .map((item,idx) => (
+                                        <Card key={item.id || idx} item={item}/>
+                                    ))
                         }
+                        <p>Показано {showCount} из {showCountLength} товаров</p>
+                        {
+                            showCountLength > 9 ?
+                                <Pagination
+                                    simple
+                                    onChange={setPage}
+                                    current={page}
+                                    total={
+                                        clothes
+                                            .filter(item => category === "all" ? item : item.category === category)
+                                            .filter(item => gender === "all" ? item : item.gender === gender).length
+                                    }
+                                    pageSize={9}
+                                /> : ''
+                        }
+
                     </div>
                 </div>
             </div>

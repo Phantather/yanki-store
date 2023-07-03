@@ -3,17 +3,17 @@ import {CustomContext} from "../../utils/Context";
 import {Link} from "react-router-dom";
 import {BiTrash} from "react-icons/bi"
 
-const Favorites = ({item}) => {
+const Favorites = () => {
 
-    const {fav, setFav, deleteFav} = useContext(CustomContext)
+    const {favorites, setFavorites, deleteFavorites} = useContext(CustomContext)
 
     return (
         <section style={{paddingTop: '100px', paddingBottom: '100px'}}>
             <div className="container">
 
                 {
-                    fav.length ?
-                        fav.map(item => (
+                    favorites.length ?
+                        favorites.map(item => (
                             <div className="catalog__card">
                                 <Link to={`/product/${item.id}`}>
                                     <img src={item.img[0]} alt="" className="catalog__card-img"/>
@@ -35,7 +35,7 @@ const Favorites = ({item}) => {
                                         ))
                                     }
                                 </div>
-                                <button className="catalog__card-btn" onClick={() => deleteFav(item.id)}><BiTrash/></button>
+                                <button className="catalog__card-btn" onClick={() => deleteFavorites(item.id)}><BiTrash/></button>
                             </div>
                         )) :
                         <h2 className="catalog__fav">Favorites are empty</h2>
