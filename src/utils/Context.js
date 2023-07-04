@@ -37,11 +37,15 @@ export const Context = (props) => {
 
 
     const addCart = (item) => {
-        if (cart.some(el => el.id === item.id)) {
-            setCart(cart.map(el => el.id === item.id ? {...item, count: el.count + 1} : el))
-        } else {
-            setCart([...cart, {...item,count: 1}])
+
+        if(cart.length && cart.some(el => el.id == item.id) &&  cart.map(el => el.size === item.size && el.color === item.color ? true : false)){
+            setCart(cart.map(el => el.id == item.id && el.size === item.size && el.color === item.color  ? {...el,count:el.count + 1}: el))
         }
+        else{
+            item = {...item,count: 1}
+            setCart([...cart,item])
+        }
+
     }
 
     const deleteCart = (id) => {

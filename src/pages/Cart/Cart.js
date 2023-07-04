@@ -6,7 +6,9 @@ import {BiTrash} from "react-icons/bi"
 const Cart = () => {
 
     const {cart, deleteCart} = useContext(CustomContext)
-
+    setInterval(() => {
+        console.log(cart)
+    },3000)
     return (
         <section style={{paddingTop: '100px', paddingBottom: '100px'}}>
             <div className="container">
@@ -20,18 +22,10 @@ const Cart = () => {
                             <h2 className="catalog__card-title">{item.title}</h2>
                             <p className="catalog__card-price">{item.price}</p>
                             <div className="catalog__card-sizes">
-                                {
-                                    item.sizes.map((el) => (
-                                        <p key={el.id} className="catalog__card-size">{el.size}</p>
-                                    ))
-                                }
+                                <p className="catalog__card-size">{item.size}</p>
                             </div>
                             <div className="catalog__card-colors">
-                                {
-                                    item.colors.map((el) => (
-                                        <p key={el.id} className="catalog__card-color" style={{background: el.color}}></p>
-                                    ))
-                                }
+                                <p className="catalog__card-color" style={{background: item.color}}></p>
                             </div>
                             <p className='catalog__count'>кол-во: {item.count}</p>
                             <button className='catalog__card-btn' onClick={() => deleteCart(item.id)}><BiTrash/></button>

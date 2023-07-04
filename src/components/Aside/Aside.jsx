@@ -9,7 +9,6 @@ const Aside = () => {
     const {getAllClothes,setClothes,clothes,setCategory,category} = useContext(CustomContext)
 
 
-    console.log(category)
     let categories = clothes.map(item => item.category)
     return (
         <aside className="aside">

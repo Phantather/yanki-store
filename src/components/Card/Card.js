@@ -7,7 +7,7 @@ const Card = ({item}) => {
     return (
         <div className="catalog__card">
             <Link to={`/product/${item.id}`}>
-                <img src={item.img[0]} alt="" className="catalog__card-img"/>
+                <img src={item?.img[0]} alt="" className="catalog__card-img"/>
             </Link>
             <h2 className="catalog__card-title">
                 {item.title}
