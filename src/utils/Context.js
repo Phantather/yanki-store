@@ -48,9 +48,9 @@ export const Context = (props) => {
 
     }
 
-    const deleteCart = (id) => {
+    const deleteCart = (id,color,size) => {
         return setCart(cart.filter(item => {
-            return item.id !== id
+            return item.id !== id || item.color !== color || item.size !== size
         }))
     }
 

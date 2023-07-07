@@ -8,6 +8,7 @@ import Cart from "./pages/Cart/Cart";
 import Favorites from "./pages/Favorites/Favorites";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Register/Login";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path={'/product/:id'} element={<OneProduct/>}/>
                 <Route path={'/cart'} element={<Cart/>}/>
                 <Route path={'/favorites'} element={<Favorites/>}/>
+                <Route path={'/checkout'} element={<Checkout/>}/>
             </Route>
             <Route path={'/register'} element={<Register/>}/>
             <Route path={'/login'} element={<Login/>}/>
