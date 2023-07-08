@@ -26,6 +26,7 @@ const Header = () => {
                         <Link className='header__link' to={'/'}>Главная</Link>
                         <Link className='header__link' to={'/shop'}>КАТАЛОГ</Link>
                         <Link className='header__link' to={'/about'}>О НАС</Link>
+                        <Link className='header__link' to={'/admin-panel'}>Admin Panel</Link>
                     </div>
                     <h1 className='header__title'>
                         <img src={logo} alt=""/>

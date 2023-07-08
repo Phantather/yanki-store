@@ -9,6 +9,7 @@ import Favorites from "./pages/Favorites/Favorites";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Register/Login";
 import Checkout from "./pages/Checkout/Checkout";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path={'/cart'} element={<Cart/>}/>
                 <Route path={'/favorites'} element={<Favorites/>}/>
                 <Route path={'/checkout'} element={<Checkout/>}/>
+                <Route path={'/admin-panel'} element={<AdminPanel/>}/>
             </Route>
             <Route path={'/register'} element={<Register/>}/>
             <Route path={'/login'} element={<Login/>}/>

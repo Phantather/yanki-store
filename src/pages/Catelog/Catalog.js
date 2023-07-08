@@ -1,11 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
-import axios from "axios";
 import Card from "../../components/Card/Card";
 import Aside from "../../components/Aside/Aside";
 import {CustomContext} from "../../utils/Context";
 
 import {Pagination} from "antd";
-import {logDOM} from "@testing-library/react";
 
 const Catalog = () => {
     const {getAllClothes,setClothes,clothes,category,sort,setSort, gender, setGender} = useContext(CustomContext)

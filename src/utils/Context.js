@@ -18,10 +18,8 @@ export const Context = (props) => {
     const [product, setProduct] = useState({})
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
-
-    const [user, setUser] = useState({
-        login: ''
-    })
+    const userL = localStorage.getItem("user")
+    const [user, setUser] = useState(userL ? userL : {login: ''})
 
     const getAllClothes = () => {
         axios(`http://localhost:8080/clothes`)

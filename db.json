@@ -6344,6 +6344,101 @@
         }
       ],
       "id": 1
+    },
+    {
+      "email": "magezamuslim40@gmail.com",
+      "password": "$2a$10$zDsltyLJx6WPCVjvS5fkVOqKDCV325wCQNlCB5zOV3GLUL24g4YtG",
+      "login": "Muslim0270705",
+      "orders": [
+        {
+          "name": "",
+          "email": "",
+          "address": "",
+          "clothes": [
+            {
+              "title": "New Balance 450",
+              "price": 250,
+              "size": "39",
+              "color": "black",
+              "id": "139black",
+              "img": [
+                "./catalog/shoes/1_1.jpg",
+                "./catalog/shoes/1_2.jpg",
+                "./catalog/shoes/1_3.jpg"
+              ],
+              "count": 1
+            }
+          ],
+          "price": 250
+        }
+      ],
+      "id": 2
+    },
+    {
+      "email": "magezamuslim4090@gmail.com",
+      "password": "$2a$10$LfkjZZzBD1QzPMSqrqPorOUzjM9HgOiw7vdrE06cSIT5XM1gmW7b.",
+      "login": "Muslim0270705",
+      "orders": [
+        {
+          "name": "",
+          "email": "",
+          "address": "",
+          "clothes": [
+            {
+              "title": "New Balance 450",
+              "price": 250,
+              "size": "40",
+              "color": "blue",
+              "id": "140blue",
+              "img": [
+                "./catalog/shoes/1_1.jpg",
+                "./catalog/shoes/1_2.jpg",
+                "./catalog/shoes/1_3.jpg"
+              ],
+              "count": 1
+            }
+          ],
+          "price": 250
+        }
+      ],
+      "id": 3
+    },
+    {
+      "email": "magezamuslim40950@gmail.com",
+      "password": "$2a$10$enzNz.dJ0OJqXS/MudbTqeXBXEsltO//G5AEVIp7Bu6BTIR8kXu2q",
+      "login": "Muslim0270705",
+      "orders": [
+        {
+          "name": "",
+          "email": "",
+          "address": "",
+          "clothes": [
+            {
+              "title": "Nike Jordan Air",
+              "price": 150,
+              "size": "40",
+              "color": "black",
+              "id": "2black",
+              "img": [
+                "./catalog/shoes/2_1.jpg",
+                "./catalog/shoes/2_2.jpg",
+                "./catalog/shoes/2_3.jpg",
+                "./catalog/shoes/2_4.jpg"
+              ],
+              "count": 1
+            }
+          ],
+          "price": 150
+        }
+      ],
+      "id": 4
+    },
+    {
+      "email": "admin@mail.ru",
+      "password": "$2a$10$oTHTMChtIRSYhhS.r6VZ0.s2jIrJGnIzvXK9rb31CPnE617gyrLDK",
+      "login": "admin",
+      "orders": [],
+      "id": 5
     }
   ]
 }

@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {CustomContext} from "../../utils/Context";
-
+import {Link} from "react-router-dom"
 const OneProduct = () => {
 
     const {id} = useParams()
-
+    const userL = localStorage.getItem("user")
     const {getOneProduct, product, addCart, favorites, addFavorites, deleteFavorites} = useContext(CustomContext)
     const [data,setData] = useState({
         title: "",
@@ -66,22 +66,47 @@ const OneProduct = () => {
                             }
                         </select>
                         <div className="product__btns">
-                            <button disabled={data?.size?.length && data?.color?.length ? false : true} className="product__btn"
-                                    onClick={() => addCart(data)}
-                            >
-                                В КОРЗИНУ
-                            </button>
-                            <button className="product__btn"
-                                    onClick={() => {
-                                        favorites.some(el => el.id === product.id)
-                                            ?
-                                            deleteFavorites(product.id)
-                                            :
-                                            addFavorites(product)
-                                    }}
-                            >
-                                В ИЗБРАННОЕ
-                            </button>
+                            {
+                                userL ?   <button disabled={data?.size?.length && data?.color?.length ? false : true} className="product__btn"
+                                                  onClick={() => addCart(data)}
+                                >
+                                    В КОРЗИНУ
+                                </button> :   <button disabled={data?.size?.length && data?.color?.length ? false : true} className="product__btn"
+                                                      onClick={() => addCart(data)}
+                                >
+                                    <Link to={"/register"}>
+                                        В КОРЗИНУ
+                                    </Link>
+
+                                </button>
+                            }
+                            {
+                                userL ? <button className="product__btn"
+                                                onClick={() => {
+                                                    favorites.some(el => el.id === product.id)
+                                                        ?
+                                                        deleteFavorites(product.id)
+                                                        :
+                                                        addFavorites(product)
+                                                }}
+                                >
+                                    В ИЗБРАННОЕ
+                                </button> :
+                                    <button className="product__btn"
+                                            onClick={() => {
+                                                favorites.some(el => el.id === product.id)
+                                                    ?
+                                                    deleteFavorites(product.id)
+                                                    :
+                                                    addFavorites(product)
+                                            }}
+                                    >
+                                        <Link to={"/register"}>
+                                            В ИЗБРАННОЕ
+                                        </Link>
+                                    </button>
+                            }
+
                         </div>
                     </div>
                 </div>
